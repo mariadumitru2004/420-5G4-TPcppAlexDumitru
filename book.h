@@ -5,7 +5,8 @@
 
 using namespace std;
 
-class Book {
+class Book
+{
 private:
     string title;
     string author;
@@ -16,7 +17,7 @@ private:
 public:
     // Constructors
     Book();
-    Book(const string& title, const string& author, const string& isbn);
+    Book(const string &title, const string &author, const string &isbn);
 
     // Getters
     string getTitle() const;
@@ -26,18 +27,19 @@ public:
     string getBorrowerId() const;
 
     // Setters
-    void setTitle(const string& title);
-    void setAuthor(const string& author);
-    void setISBN(const string& isbn);
+    void setTitle(const string &title);
+    void setAuthor(const string &author);
+    void setISBN(const string &isbn);
     void setAvailability(bool available);
-    void setBorrowerId(const string& id);
+    void setBorrowerId(const string &id);
 
     // Methods
-    void checkOut(const string& borrowerId);
+    void checkOut(const string &borrowerId);
     void returnBook();
-    string toString() const;
+    // modifier la methode tostring pour recevoir largument borrowername
+    string toString(std::string borrowerName = "") const;
     string toFileFormat() const;
-    void fromFileFormat(const string& line);
+    void fromFileFormat(const string &line);
 };
 
 #endif

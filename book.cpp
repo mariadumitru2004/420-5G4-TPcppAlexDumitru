@@ -91,7 +91,7 @@ void Book::returnBook()
 }
 
 // methode tostring modifiee
-string Book::toString() const
+string Book::toString(std::string borrowerName) const
 {
     string available = isAvailable ? "Oui" : "Non";
     string borrower = isAvailable ? "/" : borrowerId;
@@ -100,7 +100,7 @@ string Book::toString() const
            "Auteur: " + author + "\n" +
            "ISBN: " + isbn + "\n" +
            "Disponible?: " + available + "\n" +
-           "Emprunteur: -" + borrower;
+           "Emprunteur: " + borrowerName + "\n";
 }
 
 // methode pour formatter la sauvegarde dans le fichier
@@ -113,35 +113,35 @@ string Book::toFileFormat() const
 void Book::fromFileFormat(const string &line)
 {
     stringstream ss(line);
-    string part;
+    string token;
 
     // titre
-    if (getline(ss, part, '|'))
+    if (getline(ss, token, '|'))
     {
-        title = part;
+        title = token;
     }
 
     // auteur
-    if (getline(ss, part, '|'))
+    if (getline(ss, token, '|'))
     {
-        author = part;
+        author = token;
     }
 
     // isbn
-    if (getline(ss, part, '|'))
+    if (getline(ss, token, '|'))
     {
-        isbn = part;
+        isbn = token;
     }
 
     // dispo + convertir true a 1
-    if (getline(ss, part, '|'))
+    if (getline(ss, token, '|'))
     {
-        isAvailable = part == "1";
+        isAvailable = token == "1";
     }
 
     // id du emprunteur
-    if (getline(ss, part, '|'))
+    if (getline(ss, token, '|'))
     {
-        borrowerId = part;
+        borrowerId = token;
     }
 }

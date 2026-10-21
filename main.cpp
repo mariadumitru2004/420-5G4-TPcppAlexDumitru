@@ -170,12 +170,25 @@ int main(int argc, char *argv[])
                 for (size_t i = 0; i < results.size(); ++i)
                 {
                     cout << "\nRésultat " << (i + 1) << " :\n";
-                    cout << results[i]->toString() << "\n";
+                    // on met le id du borrower the chaque livre et on le met dans la varuable temporaire borrowerID
+                    string borrowerID = results[i]->getBorrowerId();
+                    // on cree un pointer user ou on va mettre le pointer du userID en utilisant la methode finduserbyid deja existsante
+                    User *borrowerpointer = library.findUserById(borrowerID);
+
+                    if (borrowerpointer)
+                    { // si le pointer nest pas null on appelle la methode tostring que jai modifie pour accepter le nom
+                        // sur le livre actuel
+                        cout << results[i]->toString(borrowerpointer->getName());
+                    }
+                    else
+                    {
+                        cout << results[i]->toString() << "\n";
+                    }
                     cout << "-----------------------------\n";
                 }
+                pauseForInput();
+                break;
             }
-            pauseForInput();
-            break;
         }
 
         case 4:
@@ -193,7 +206,19 @@ int main(int argc, char *argv[])
                 for (size_t i = 0; i < results.size(); ++i)
                 {
                     cout << "\nRésultat " << (i + 1) << " :\n";
-                    cout << results[i]->toString() << "\n";
+                    // on met le id du borrower the chaque livre et on le met dans la varuable temporaire borrowerID
+                    string borrowerID = results[i]->getBorrowerId();
+                    // on cree un pointer user ou on va mettre le pointer du userID en utilisant la methode finduserbyid deja existsante
+                    User *borrowerpointer = library.findUserById(borrowerID);
+                    if (borrowerpointer)
+                    { // si le pointer nest pas null on appelle la methode tostring que jai modifie pour accepter le nom
+                        // sur le livre actuel
+                        cout << results[i]->toString(borrowerpointer->getName());
+                    }
+                    else
+                    {
+                        cout << results[i]->toString() << "\n";
+                    }
                     cout << "-----------------------------\n";
                 }
             }
