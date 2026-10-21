@@ -94,13 +94,27 @@ void Book::returnBook()
 string Book::toString(std::string borrowerName) const
 {
     string available = isAvailable ? "Oui" : "Non";
-    string borrower = isAvailable ? "/" : borrowerId;
 
+    // modification ajout de verifications pour gerer si le livre n'est pas emprunte
+
+    string borrower;
+    if (isAvailable)
+    {
+        borrower = "/";
+    }
+    else if (!borrowerName.empty())
+    {
+        borrower = borrowerName;
+    }
+    else
+    {
+        borrower = borrowerId;
+    }
     return "Titre: " + title + "\n" +
            "Auteur: " + author + "\n" +
            "ISBN: " + isbn + "\n" +
            "Disponible?: " + available + "\n" +
-           "Emprunteur: " + borrowerName + "\n";
+           "Emprunteur: " + borrower + "\n";
 }
 
 // methode pour formatter la sauvegarde dans le fichier

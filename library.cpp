@@ -1,6 +1,6 @@
 #include <iostream>
 #include <algorithm>
-
+#include <vector>
 #include "library.h"
 
 using namespace std;
@@ -60,6 +60,15 @@ vector<Book *> Library::searchBooksByTitle(const string &title)
             results.push_back(book.get());
         }
     }
+    // fonction de tri encore utilise dans search avant retour
+    sort(results.begin(), results.end(), [](Book *a, Book *b)
+         {
+         if (a->getTitle() != b->getTitle())
+         {
+             return a->getTitle() < b->getTitle();
+         }
+
+         return a->getAuthor() < b->getAuthor(); });
     return results;
 }
 
@@ -80,6 +89,15 @@ vector<Book *> Library::searchBooksByAuthor(const string &author)
             results.push_back(book.get());
         }
     }
+    // fonction de tri reutilisee dans search books by author
+    sort(results.begin(), results.end(), [](Book *a, Book *b)
+         {
+         if (a->getTitle() != b->getTitle())
+         {
+             return a->getTitle() < b->getTitle();
+         }
+
+         return a->getAuthor() < b->getAuthor(); });
     return results;
 }
 
@@ -94,6 +112,17 @@ vector<Book *> Library::getAvailableBooks()
             available.push_back(book.get());
         }
     }
+    // algorithme de tri avec expression lambda comme dans les notes de cours
+    sort(available.begin(), available.end(), [](Book *a, Book *b)
+         {
+            //si les titres ne sont pas pareils on trie par titre 
+             if (a->getTitle() != b->getTitle())
+             {
+                 return a->getTitle() < b->getTitle();
+             }
+            //si les titres sint pareils on trie par autheur 
+             return a->getAuthor() < b->getAuthor(); });
+
     return available;
 }
 
@@ -105,6 +134,18 @@ vector<Book *> Library::getAllBooks()
     {
         allBooks.push_back(book.get());
     }
+
+    // algorithme de tri avec expression lambda comme dans les notes de cours
+    sort(allBooks.begin(), allBooks.end(), [](Book *a, Book *b)
+         {
+            //si les titres ne sont pas pareils on trie par titre 
+             if (a->getTitle() != b->getTitle())
+             {
+                 return a->getTitle() < b->getTitle();
+             }
+            //si les titres sint pareils on trie par autheur 
+             return a->getAuthor() < b->getAuthor(); });
+
     return allBooks;
 }
 
@@ -177,7 +218,10 @@ bool Library::returnBook(const string &isbn)
 // Display all books
 void Library::displayAllBooks()
 {
-    if (books.empty())
+    // petits changements pour utiliser le vecteur deja trie de getallbooks
+    auto allBooks = getAllBooks();
+
+    if (allBooks.empty())
     {
         cout << "Aucun livre dans la bibliothèque.\n";
         return;
@@ -188,18 +232,18 @@ void Library::displayAllBooks()
     {
         cout << "\nLivre " << (i + 1) << " :\n";
         // on met le id du borrower the chaque livre et on le met dans la varuable temporaire borrowerID
-        string borrowerID = books[i]->getBorrowerId();
+        string borrowerID = allBooks[i]->getBorrowerId();
         // on cree un pointer user ou on va mettre le pointer du userID en utilisant la methode finduserbyid deja existsante
         User *borrowerpointer = findUserById(borrowerID);
 
         if (borrowerpointer)
         { // si le pointer nest pas null on appelle la methode tostring que jai modifie pour accepter le nom
             // sur le livre actuel
-            cout << books[i]->toString(borrowerpointer->getName());
+            cout << allBooks[i]->toString(borrowerpointer->getName());
         }
         else
         {
-            cout << books[i]->toString() << "\n";
+            cout << allBooks[i]->toString() << "\n";
         }
         cout << "-------------------------\n";
     }
