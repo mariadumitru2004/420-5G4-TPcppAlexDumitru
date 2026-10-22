@@ -133,6 +133,11 @@ int main(int argc, char *argv[])
             {
                 Book newBook(title, author, isbn);
                 library.addBook(newBook);
+
+                // appel de logactivity
+                fileManager.logActivity(
+                    "AJOUT LIVRE",
+                    title + "|" + author + "|" + isbn + "|1|"); // au rajout un livre va tjr etre available
                 cout << "Livre ajouté avec succès !\n";
             }
             pauseForInput();
@@ -143,8 +148,20 @@ int main(int argc, char *argv[])
         { // Remove Book
             string isbn = getInput("Entrez l'ISBN du livre à supprimer : ");
 
+            // creeation dun book pointer qui pointe au livre quon veut delete pour acceder les details necessaires
+            Book *bookToRemove = library.findBookByISBN(isbn);
+            string details;
+
+            if (bookToRemove) // si le pointer est pas null
+            {
+                details = bookToRemove->getTitle() + "|" +
+                          bookToRemove->getAuthor() + "|" +
+                          isbn;
+            }
+
             if (library.removeBook(isbn))
             {
+                fileManager.logActivity("SUPPRESSION LIVRE", details);
                 cout << "Livre supprimé avec succès !\n";
             }
             else
@@ -186,9 +203,9 @@ int main(int argc, char *argv[])
                     }
                     cout << "-----------------------------\n";
                 }
-                pauseForInput();
-                break;
             }
+            pauseForInput();
+            break;
         }
 
         case 4:
@@ -249,6 +266,9 @@ int main(int argc, char *argv[])
             {
                 User newUser(name, userId);
                 library.addUser(newUser);
+                fileManager.logActivity(
+                    "AJOUT UTILISATEUR",
+                    name + "|" + userId);
                 cout << "Utilisateur ajouté avec succès !\n";
             }
             pauseForInput();
@@ -267,6 +287,20 @@ int main(int argc, char *argv[])
 
             if (library.checkOutBook(isbn, userId))
             {
+
+                // book et user pointers pour acceder les informations necessaires au log
+                Book *book = library.findBookByISBN(isbn);
+                User *user = library.findUserById(userId);
+
+                if (book && user) // si pas null
+                {
+                    fileManager.logActivity(
+                        "EMPRUNT",
+                        book->getTitle() + "|" +
+                            book->getAuthor() + "|" +
+                            book->getISBN() + "|0|" +
+                            user->getName());
+                }
                 cout << "Livre emprunté avec succès !\n";
             }
             else
@@ -283,6 +317,17 @@ int main(int argc, char *argv[])
 
             if (library.returnBook(isbn))
             {
+                // pointer pour acceder infos du book pour log
+                Book *book = library.findBookByISBN(isbn);
+
+                if (book)
+                {
+                    fileManager.logActivity(
+                        "RETOUR",
+                        book->getTitle() + "|" +
+                            book->getAuthor() + "|" +
+                            book->getISBN());
+                }
                 cout << "Livre retourné avec succès !\n";
             }
             else

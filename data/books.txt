@@ -1,42 +1,42 @@
-Le Petit Prince|Antoine de Saint-Exupéry|9782070612758|1|
-Les Misérables|Victor Hugo|9782253096337|0|USR001
-L'Étranger|Albert Camus|9782070360024|1|
-Madame Bovary|Gustave Flaubert|9782070413119|0|USR002
-Le Rouge et le Noir|Stendhal|9782070411326|1|
-Germinal|Émile Zola|9782253004226|0|USR003
-Le Père Goriot|Honoré de Balzac|9782253085119|1|
-Candide|Voltaire|9782070380015|1|
-Les Fleurs du mal|Charles Baudelaire|9782070323087|0|USR004
-Notre-Dame de Paris|Victor Hugo|9782253002864|1|
-L'Assommoir|Émile Zola|9782253004233|1|
-Bel-Ami|Guy de Maupassant|9782253005070|0|USR005
-Le Malade imaginaire|Molière|9782070380763|1|
-Phèdre|Jean Racine|9782070380800|1|
-Le Cid|Pierre Corneille|9782070380848|0|USR006
-Tartuffe|Molière|9782070380770|1|
-Dom Juan|Molière|9782070380787|1|
 Andromaque|Jean Racine|9782070380817|0|USR007
-Le Barbier de Séville|Beaumarchais|9782070380855|1|
-Britannicus|Jean Racine|9782070380824|1|
-La Princesse de Clèves|Madame de Lafayette|9782070360031|0|USR008
-Manon Lescaut|Abbé Prévost|9782070360048|1|
-Paul et Virginie|Bernardin de Saint-Pierre|9782070360055|1|
 Atala|Chateaubriand|9782070360062|0|USR009
-René|Chateaubriand|9782070360079|1|
-Corinne|Madame de Staël|9782070360086|1|
-Indiana|George Sand|9782070360093|0|USR010
-La Mare au diable|George Sand|9782253005087|1|
-François le Champi|George Sand|9782253005094|1|
-La Petite Fadette|George Sand|9782253005101|0|USR011
+Bel-Ami|Guy de Maupassant|9782253005070|0|USR005
+Britannicus|Jean Racine|9782070380824|1|
+Candide|Voltaire|9782070380015|1|
 Consuelo|George Sand|9782253005118|1|
-Le Meunier d'Angibault|George Sand|9782253005125|1|
-Les Contemplations|Victor Hugo|9782070380932|0|USR012
-La Légende des siècles|Victor Hugo|9782070380949|1|
-Les Châtiments|Victor Hugo|9782070380956|1|
-L'Art poétique|Nicolas Boileau|9782070380963|0|USR013
-Les Caractères|Jean de La Bruyère|9782070380970|1|
-Maximes|La Rochefoucauld|9782070380987|1|
-Pensées|Blaise Pascal|9782070380994|0|USR014
-Lettres persanes|Montesquieu|9782070381001|1|
+Corinne|Madame de Staël|9782070360086|1|
 De l'esprit des lois|Montesquieu|9782070381018|1|
+Dom Juan|Molière|9782070380787|1|
+François le Champi|George Sand|9782253005094|1|
+Germinal|Émile Zola|9782253004226|0|USR003
+Indiana|George Sand|9782070360093|0|USR010
+L'Art poétique|Nicolas Boileau|9782070380963|0|USR013
+L'Assommoir|Émile Zola|9782253004233|1|
+L'Étranger|Albert Camus|9782070360024|1|
+La Légende des siècles|Victor Hugo|9782070380949|1|
+La Mare au diable|George Sand|9782253005087|1|
+La Petite Fadette|George Sand|9782253005101|0|USR011
+La Princesse de Clèves|Madame de Lafayette|9782070360031|0|USR008
+Le Barbier de Séville|Beaumarchais|9782070380855|1|
+Le Cid|Pierre Corneille|9782070380848|0|USR006
+Le Malade imaginaire|Molière|9782070380763|1|
+Le Meunier d'Angibault|George Sand|9782253005125|1|
+Le Petit Prince|Antoine de Saint-Exupéry|9782070612758|1|
+Le Père Goriot|Honoré de Balzac|9782253085119|1|
+Le Rouge et le Noir|Stendhal|9782070411326|1|
+Les Caractères|Jean de La Bruyère|9782070380970|1|
+Les Châtiments|Victor Hugo|9782070380956|1|
+Les Contemplations|Victor Hugo|9782070380932|0|USR012
+Les Fleurs du mal|Charles Baudelaire|9782070323087|0|USR004
+Les Misérables|Victor Hugo|9782253096337|0|USR001
+Lettres persanes|Montesquieu|9782070381001|1|
+Madame Bovary|Gustave Flaubert|9782070413119|0|USR002
+Manon Lescaut|Abbé Prévost|9782070360048|1|
+Maximes|La Rochefoucauld|9782070380987|1|
+Notre-Dame de Paris|Victor Hugo|9782253002864|1|
+Paul et Virginie|Bernardin de Saint-Pierre|9782070360055|1|
+Pensées|Blaise Pascal|9782070380994|0|USR014
+Phèdre|Jean Racine|9782070380800|1|
+René|Chateaubriand|9782070360079|1|
+Tartuffe|Molière|9782070380770|1|
 abc|abcd|123|0|123
